@@ -1,0 +1,85 @@
+.section {
+  /* padding-inline: 15px; */
+  /* padding-block: 75px; */
+  /* padding-block: clamp(50px, 5vw, 75px); */
+}
+
+.container {
+  /* max-width: 1400px; */
+  width: min(100%, 1400px);
+  margin-inline: auto;
+}
+
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* TODO: Decor Border Styles */
+span.decor-border {
+  /* Layout */
+  display: inline-block;
+  /* Positioning */
+  position: relative;
+  /* Box Model */
+  /* Display */
+  /* Other */
+}
+
+span.decor-border[data-block="top"] {
+  padding-top: var(--decor-border-padding);
+}
+
+span.decor-border[data-block="bottom"] {
+  padding-bottom: var(--decor-border-padding);
+}
+
+span.decor-border::after {
+  /* Layout */
+  content: "";
+  /* Positioning */
+  position: absolute;
+  /* Box Model */
+  width: 20px;
+  height: 2px;
+  /* Display */
+  background-color: hsla(var(--red), 1);
+  /* Other */
+}
+
+span.decor-border[data-block="top"]::after {
+  top: 0;
+}
+
+span.decor-border[data-block="bottom"]::after {
+  bottom: 0;
+}
+
+span.decor-border[data-inline="center"]::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+span.decor-border[data-inline="left"]::after {
+  left: 0;
+}
+
+span.decor-border[data-inline="right"]::after {
+  right: 0;
+}
+
+/* TODO: => em, rem */
+
+/*? 1rem = roo -> font-size */
+/*? 1em = parent element -> font-size */
+
+/* TODO: => BOX MODEL -> BOX-SIZING: [content-box, border-box] */
+
+.block {
+  width: 500px;
+  padding-inline: 50px;
+  border-inline: 25px;
+}
+/* TODO: BLOCK FULL WIDTH */
+/* TODO: content-box: width + (2 * padding-inline) + (2 * border-inline) = 650px*/
+/* TODO: border-box: FullWidth = width, blockContent = width - (2 * padding-inline) - (2 * border-inline) = 350px*/

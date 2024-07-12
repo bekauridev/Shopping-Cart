@@ -1,0 +1,43 @@
+body {
+  font: inherit;
+}
+
+.form-check-input {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -75%);
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.favorite-basket {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/* #admin-panel {
+  width: 150px;
+}
+.img-thumbnail {
+} */
+
+img[data-image="main"] {
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 3 / 4;
+}
+
+[id="user-dialog-box"] {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* .page-footer:has([data-status="done"]) {
+  justify-content: center !important;
+} */

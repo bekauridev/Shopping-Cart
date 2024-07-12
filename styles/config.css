@@ -1,0 +1,12 @@
+:root {
+  font-size: 20px; /* 1rem = 20px */
+}
+/* Create Variables */
+/* TODO => https://www.curiouslychase.com/posts/most-common-programming-case-types/ */
+/* TODO => https://medium.com/nerd-for-tech/programming-case-types-explained-143cad3681e3 */
+/* 
+  ? backgroundColor - Camel case
+  ? BackgroundColor - Pascal case
+  ? background_color - Snake case
+  ? kebab-case - Kebab case
+*/
