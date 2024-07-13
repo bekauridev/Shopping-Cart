@@ -3,7 +3,6 @@ const productsRow = getById("products-row");
 const categoryDropdown = getById("category-dropdown");
 const propertyDropdown = getById("property-dropdown");
 const orderDropdown = getById("order-dropdown");
-const searchForm = getById("search-form");
 const modalDialog = getById("modal-dialog");
 const userDialogBox = getById("user-dialog-box");
 const pagination = getById("pagination");
@@ -14,7 +13,6 @@ export {
   categoryDropdown,
   propertyDropdown,
   orderDropdown,
-  searchForm,
   modalDialog,
   userDialogBox,
   pagination,

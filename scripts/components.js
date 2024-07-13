@@ -86,21 +86,15 @@ function ProductComponent(props) {
   ];
 
   const logoutButtons = [
-    /*html*/ `<button type="button" class="btn btn-danger"
-            data-template-id="authorization-form-template"
-            data-template-title="Authorization Form"
-            onclick="renderTemplateComponent(this)">
-        <i class="bi bi-bag-heart"></i>
-      </button>`,
     /*html*/ `<button type="button" class="btn btn-warning"
             data-template-id="authorization-form-template"
             data-template-title="Authorization Form"
             onclick="renderTemplateComponent(this)">
-        <i class="bi bi-cart4"></i>
-      </button>`,
+             <i class="bi bi-cart4"></i>
+          </button>`,
   ];
   const buttons = isAuth ? loginButtons : logoutButtons;
-  return /*html*/ `<div class="card" id="${id}">
+  return /*html*/ `<li class="card name" id="${id}">
             <div class="card-header position-relative">
               <img src="${thumbnail}"
               class="card-img-top cursor-pointer"
@@ -119,7 +113,7 @@ function ProductComponent(props) {
               ${tagsContent}
               </div>
             </div>
-          </div>`;
+          </li>`;
 }
 
 /**
@@ -136,59 +130,7 @@ function ProductComponent(props) {
  * @property {String} thumbnail - URL of the product thumbnail image.
  * @return {String} - HTML string representing a detailed view of a single product.
  */
-// function SingleProductComponent(props) {
-//   const {
-//     id,
-//     title,
-//     description,
-//     category,
-//     brand,
-//     price,
-//     rating,
-//     tags,
-//     images,
-//     thumbnail,
-//   } = props;
-//   const tagsContent = tags.map((tag) => TagComponent({ name: tag })).join("");
-//   const imagesContent = images
-//     .map((image) => ThumbnailComponent({ id: crypto.randomUUID(), image, productId: id }))
-//     .map((image) => _Col({ content: image, classes: ["col-3", "md-4"] }))
-//     .join("");
-//   return /*html*/ `<div class="card mb-3" id="single-${id}">
-//           <div class="row g-0">
-//             <div class="col-md-5">
-//               <img src="${thumbnail}" data-image="main" class="img-fluid rounded-start" alt="${title}">
-//               <div class="row align-items-end">
-//               ${imagesContent}
-//               </div>
-//             </div>
-//             <div class="col-md-7">
-//               <div class="card-body">
-//                 <h5 class="card-title">${title}</h5>
-//                 <ul class="list-group list-group-flush">
-//                 <li class="list-group-item">
-//                   <strong>Category</strong> : ${category}
-//                 </li>
-//                 <li class="list-group-item">
-//                   <strong>Brand</strong> : ${brand}
-//                 </li>
-//                 <li class="list-group-item">
-//                   <strong>Price</strong> : ${price}
-//                 </li>
-//                 <li class="list-group-item">
-//                   <strong>Rating</strong> : ${rating}
-//                 </li>
-//               </ul>
-//               </div>
-//               <div class="card-footer">
-//               <div class="btn-group" role="group">
-//               ${tagsContent}
-//               </div>
-//             </div>
-//             </div>
-//           </div>
-//         </div>`;
-// }
+
 function SingleProductComponent(props) {
   const {
     id,
@@ -208,7 +150,7 @@ function SingleProductComponent(props) {
     .map((image) => ThumbnailComponent({ id: crypto.randomUUID(), image, productId: id }))
     .map((image) => _Col({ content: image, classes: ["col-3", "md-4"] }))
     .join("");
-  console.log(imagesContent);
+
   return /*html*/ `<div class="card mb-3" id="single-${id}">
           <div class="row g-0">
             <div class="col-md-5">
@@ -347,18 +289,6 @@ function ProductRowFooterComponent(props) {
 }
 
 /**
- * @param {Object} props
- * @property {number} page - Page number for pagination.
- * @return {String} - HTML string representing a pagination button.
- */
-function PaginateComponent(props) {
-  const { page } = props;
-  return /*html*/ `<li class="page-item">
-                  <button type="button" class="btn btn-primary" data-page="${page}" onclick="paginate(this)">${page}</button>
-              </li>`;
-}
-
-/**
  * @param {Object | null } props
  * @return {String} - HTML string representing authentication buttons.
  */
@@ -424,7 +354,6 @@ export {
   OptionComponent,
   ProductRowComponent,
   ProductRowFooterComponent,
-  PaginateComponent,
   AuthComponent,
   AvatarComponent,
   PanelSettingsComponent,

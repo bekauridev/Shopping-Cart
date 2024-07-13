@@ -1,32 +1,3 @@
-// function getById(id) {
-//   return document.getElementById(id);
-// }
-
-// function isValidJSON(jsonString) {
-//   try {
-//     JSON.parse(jsonString);
-//     return true;
-//   } catch (e) {
-//     return false;
-//   }
-// }
-
-// function range(start, end) {
-//   const numbers = [];
-//   for (let i = start; i <= end; i++) {
-//     numbers.push(i);
-//   }
-//   return numbers;
-// }
-
-// function render(element, content) {
-//   element.innerHTML = content;
-// }
-
-// export { getById, isValidJSON, range, render };
-
-// !! V2 - with comments
-
 // Function to get an element by its ID from the DOM
 function getById(id) {
   return document.getElementById(id);

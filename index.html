@@ -26,8 +26,6 @@
         class="row mb-5 justify-content-between align-items-center"
         data-content="user panel"
       >
-        <!-- class="col-2 mb-5" -->
-        <!-- class="col-" -->
         <div id="admin-panel" data-content="admin panel" style="width: 100px">
           <img
             src="images/theme/admin.webp"
@@ -35,7 +33,6 @@
             alt="Admin Avatar"
           />
         </div>
-        <!-- class="col-md-10 mb-4" -->
         <div class="col-auto" id="panel-settings" data-content="panel-settings"></div>
       </div>
       <div class="row" data-content="filtering sorting">
@@ -60,26 +57,29 @@
           </div>
         </div>
       </div>
-      <div class="row my-4 justify-content-center" data-content="search Products">
-        <div class="col-md-6">
-          <form id="search-form">
-            <input
-              type="search"
-              name="search"
-              class="form-control"
-              placeholder="Search Product"
-              autocomplete="off"
-            />
-          </form>
+      <div id="test-list">
+        <div class="row my-4 justify-content-center" data-content="search Products">
+          <div class="col-md-6">
+            <form id="search-form">
+              <input
+                type="test"
+                class="search form-control"
+                placeholder="Search Product"
+              />
+            </form>
+          </div>
         </div>
+        <ul class="row my-4 list p-0" id="products-row"></ul>
+        <ul class="pagination justify-content-center"></ul>
       </div>
-      <div class="row my-4" id="products-row"></div>
+
+      <!-- Pagination controls -->
       <nav aria-label="Page navigation">
         <ul class="pagination gap-1 flex-wrap" id="pagination"></ul>
       </nav>
     </div>
 
-    <!-- TODO: Template TAG Component -->
+    <!-- Registration form -->
     <template id="registration-form-template">
       <form onsubmit="registration(event)">
         <div class="mb-3">
@@ -117,6 +117,7 @@
         <button type="submit" class="btn btn-primary">Registration</button>
       </form>
     </template>
+    <!-- TODO: login form -->
     <template id="authorization-form-template">
       <form onsubmit="authorization(event)">
         <div class="mb-3">
@@ -170,11 +171,13 @@
 
     <!-- TODO: user dialog box -->
     <div id="user-dialog-box"></div>
+    <!-- == Scripts == -->
+    <!-- Bootstrap  -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
-    <script>
-      // Fancybox.bind("[data-fancybox]", {});
-    </script>
+    <!-- List.js for pagination-->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/list.pagination.js/0.1.1/list.pagination.min.js"></script>
+    <script></script>
     <script type="module" src="scripts/app.js"></script>
     <script type="module">
       import {
@@ -186,7 +189,7 @@
         incrementProduct,
         decrementProduct,
         clearCart,
-        paginate,
+        // paginate,
         renderTemplateComponent,
         registration,
         authorization,
@@ -202,7 +205,7 @@
         incrementProduct,
         decrementProduct,
         clearCart,
-        paginate,
+        // paginate,
         renderTemplateComponent,
         registration,
         authorization,
